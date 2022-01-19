@@ -1,29 +1,30 @@
 class Stationery:
-    title = 'name'
+    def __init__(self, title):
+        self.title = title
 
     def draw(self):
-        return 'Запуск отрисовки'
+        return f'{self.title} - запуск отрисовки'
 
 
 class Pen(Stationery):
     def draw(self):
-        return 'Ручка'
+        return 'Ручка пишет'
 
 
 class Pencil(Stationery):
     def draw(self):
-        return 'Карандаш'
+        return 'Карандаш чертит'
 
 
 class Handle(Stationery):
     def draw(self):
-        return 'Маркер'
+        return 'Маркер рисует'
 
 
-a = Stationery()
-b = Pen()
-c = Pencil()
-d = Handle()
+a = Stationery('Кисточка')
+b = Pen('Ручка')
+c = Pencil('Карандаш')
+d = Handle('Маркер')
 print(a.draw())
 print(b.draw())
 print(c.draw())

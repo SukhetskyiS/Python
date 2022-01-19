@@ -1,19 +1,20 @@
 class Worker:
-    my_dict = {'wage': 5000, 'bonus': 3000}
-    name = 'Ivan'
-    surname = 'Ivanov'
-    position = 'driver'
-    _income = my_dict
+    def __init__(self, name, surname, position, wage, bonus):
+        my_dict = {'wage': wage, 'bonus': bonus}
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = my_dict
 
 
 class Position(Worker):
     def get_full_name(self):
-        return f'{super().surname} {super().name}'
+        return f'{self.surname} {self.name} {self.position}'
 
     def get_total_income(self):
-        return super()._income['wage'] + super()._income['bonus']
+        return f"{self._income['wage'] + self._income['bonus']}$"
 
 
-a = Position()
+a = Position('Dexter', 'Morgan', 'killer', 12000, 3000)
 print(a.get_full_name())
 print(a.get_total_income())
